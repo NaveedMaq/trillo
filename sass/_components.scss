@@ -1,8 +1,20 @@
 /////////////////////////////////////////
 /// LOGO
 .logo {
-  height: 3.25rem;
-  margin-left: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__img {
+    height: 3.25rem;
+    margin-left: 2rem;
+  }
+
+  &__title {
+    color: var(--color-primary);
+    font-size: 2.8rem;
+    font-weight: 300;
+    margin-left: 1rem;
+  }
 }
 
 /////////////////////////////////////////
@@ -197,7 +209,7 @@
 .overview {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--color-grey-light-2);
+  border-bottom: var(--line);
 
   &__heading {
     font-size: 2.25rem;
@@ -288,5 +300,70 @@
   100% {
     transform: scale(1);
     box-shadow: none;
+  }
+}
+
+/////////////////////////////////////////
+/// PARAGRAPH
+.paragraph:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+
+/////////////////////////////////////////
+/// LIST
+.list {
+  list-style: none;
+  margin: 3rem 0;
+  padding: 3rem;
+  border-top: var(--line);
+  border-bottom: var(--line);
+
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    flex: 0 0 50%;
+    margin-bottom: 0.7rem;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      height: 1rem;
+      width: 1rem;
+      margin-right: 0.7rem;
+
+      // Older browsers
+      // background-image: url(../img/chevron-thin-right.svg);
+      // background-size: cover;
+      // background-repeat: no-repeat;
+
+      // Newer browsers - masks
+      background-color: var(--color-primary);
+      mask-image: url(../img/chevron-thin-right.svg);
+      mask-size: cover;
+    }
+  }
+}
+
+/////////////////////////////////////////
+///  RECOMMEND
+.recommend {
+  font-size: 1.3rem;
+  color: var(--color-grey-dark-3);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__photo {
+    box-sizing: content-box;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    border: 3px solid #fff;
+
+    &:not(:last-child) {
+      margin-right: -1.5rem;
+    }
   }
 }
